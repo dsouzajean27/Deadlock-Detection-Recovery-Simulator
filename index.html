@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deadlock Simulator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Cytoscape.js -->
+    <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+</head>
+<body>
+
+    <div class="main-wrapper">
+
+        <div class="header">
+            <h1>⚙ Deadlock Detection & Recovery Simulator</h1>
+            <p>
+                Banker's Algorithm • Deadlock Detection • Recovery • RAG Visualization
+            </p>
+        </div>
+
+        <div class="dashboard-card">
+
+            <div class="input-section">
+
+                <div class="input-box">
+                    <label>Processes</label>
+                    <input type="number" id="processes" value="5">
+                </div>
+
+                <div class="input-box">
+                    <label>Resources</label>
+                    <input type="number" id="resources" value="3">
+                </div>
+                <button onclick="generateTables()">
+                    Generate Tables
+                </button>
+
+            </div>
+
+            <div id="tables"></div>
+
+            <div class="buttons">
+
+                <button onclick="calculateNeed()">
+                    Generate Need Matrix
+                </button>
+
+                <button onclick="runBanker()">
+                    Run Banker's Algorithm
+                </button>
+
+                <button onclick="detectDeadlock()">
+                    Detect Deadlock
+                </button>
+
+                <button onclick="recoverDeadlock()">
+                    Recover System
+                </button>
+                 <button onclick="drawGraph()">
+                    Draw RAG
+                </button>
+
+            </div>
+
+            <div id="output"></div>
+
+            <div id="cy"></div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script src="banker.js"></script>
+    <script src="detection.js"></script>
+    <script src="recovery.js"></script>
+    <script src="rag.js"></script>
+</body>
+</html>
