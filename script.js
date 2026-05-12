@@ -27,31 +27,34 @@ function generateTables() {
     document.getElementById("tables").innerHTML = html;
 }
 
-function createMatrix(title, prefix, p, r) {
+function generateTables() {
 
-    let html = `<div><h3>${title} Matrix</h3>`;
-    html += "<table>";
+    let p = parseInt(document.getElementById("processes").value);
+    let r = parseInt(document.getElementById("resources").value);
 
-    for(let i=0; i<p; i++) {
+    let html = "";
 
-        html += "<tr>";
+    // Allocation Matrix
+    html += createMatrix("Allocation", "alloc", p, r);
 
-        for(let j=0; j<r; j++) {
+    // Max Matrix
+    html += createMatrix("Max", "max", p, r);
 
-            html += `
-            <td>
-                <input type="number"
-                id="${prefix}-${i}-${j}"
-                value="0">
-            </td>`;
-        }
+    // Available Vector
+    html += "<h3>Available Vector</h3>";
+    html += "<table><tr>";
 
-        html += "</tr>";
+    for(let j=0; j<r; j++) {
+        html += `<td><input type="number" id="avail-${j}" value="0"></td>`;
     }
 
-    html += "</table>";
+    html += "</tr></table>";
 
-    html += "</div>";
+    // Need Matrix
+    html += `<div id="needMatrix"></div>`;
 
-    return html;
+    document.getElementById("tables").innerHTML = html;
+
+    // Disable Generate Button
+    document.getElementById("generateBtn").disabled = true;
 }

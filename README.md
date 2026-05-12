@@ -62,4 +62,8 @@ The simulator visually demonstrates safe states, unsafe states, deadlock cycles,
 
 - Drag-and-drop RAG nodes
 - Wait-for Graph implementation
+<<<<<<< HEAD
 - Rollback-based recovery
+=======
+- Rollback-based recovery
+>>>>>>> 4961515a82825ab6f9c382f7ac068ab8ddfa2932
