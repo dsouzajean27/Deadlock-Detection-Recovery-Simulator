@@ -1,4 +1,4 @@
-function drawGraph() {
+function drawRAG() {
 
     let data = getMatrices();
 
@@ -145,7 +145,7 @@ function drawGraph() {
             'text-background-padding': 3
         }
     }
-]
+],
 
         layout: {
             name: 'cose',
